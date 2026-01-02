@@ -1,0 +1,40 @@
+.hero {
+    background: linear-gradient(
+        to right,
+        rgba(0, 102, 204, 0.85),
+        rgba(0, 102, 204, 0.65)
+      ),
+      url('../../../../assets/hero.jpg') center / cover no-repeat;
+  
+    color: var(--white);
+    padding: 120px 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  h1 {
+    font-size: var(--h1);
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    max-width: 480px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--blue);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  

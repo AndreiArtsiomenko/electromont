@@ -1,0 +1,22 @@
+.header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--gray);
+  }
+  
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav a.active {
+    color: var(--blue);
+    font-weight: 600;
+  }
+  

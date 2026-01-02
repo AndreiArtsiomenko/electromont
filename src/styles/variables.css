@@ -1,7 +1,22 @@
 :root {
-    --primary: #ffb703;
-    --dark: #1a1a1a;
-    --light: #ffffff;
-    --gap: 16px;
-  }
-  
+  /* Colors */
+  --blue: #0066cc;
+  --blue-dark: #004c99;
+  --white: #ffffff;
+  --gray-bg: #f5f5f5;
+  --gray-text: #333333;
+  --gray-muted: #777777;
+
+  /* Typography */
+  --font-main: 'Inter', system-ui, sans-serif;
+
+  --h1: 48px;
+  --h2: 36px;
+  --h3: 22px;
+  --text: 16px;
+
+  /* UI */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
