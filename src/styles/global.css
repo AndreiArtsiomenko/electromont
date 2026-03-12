@@ -1,31 +1,49 @@
-:root {
-  --blue: #0066cc;
-  --blue-dark: #004c99;
-  --white: #ffffff;
-  --gray-light: #f5f5f5;
-  --gray: #e0e0e0;
-  --text-dark: #333333;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text-dark);
-  background-color: var(--white);
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--text-main);
+  background: var(--white);
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+#root {
+  min-height: 100vh;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+body,
+button,
+input,
+textarea,
+select,
+a,
+p,
+span,
+div,
+li {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+p {
+  margin: 0;
 }
