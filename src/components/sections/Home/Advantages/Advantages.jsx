@@ -5,59 +5,73 @@ import {
   Clock,
   Sparkles,
   Award,
-  Wallet
 } from 'lucide-react';
 
 import Container from '../../../ui/Container/Container';
 import styles from './Advantages.module.css';
 
-const advantages = [
-  {
-    icon: ShieldCheck,
-    text: 'Используем только проверенные материалы'
-  },
-  {
-    icon: Wrench,
-    text: 'Применяем профессиональный инструмент'
-  },
-  {
-    icon: ClipboardCheck,
-    text: 'Соблюдаем все нормы и правила'
-  },
-  {
-    icon: Clock,
-    text: 'Четкие сроки выполнения работ'
-  },
-  {
-    icon: Sparkles,
-    text: 'Чистота после монтажа'
-  },
-  {
-    icon: Award,
-    text: 'Гарантия 2 года на все работы'
-  },
-  {
-    icon: Wallet,
-    text: 'Учитываем ваши пожелания и бюджет'
-  }
-];
-
 const Advantages = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.advantages}>
       <Container>
-        <h2 className={styles.title}>Наши преимущества</h2>
+        <div className={styles.head}>
+          <h2>Наши преимущества</h2>
+        </div>
 
         <ul className={styles.list}>
-          {advantages.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <li key={i} className={styles.item}>
-                <Icon className={styles.icon} />
-                <span>{item.text}</span>
-              </li>
-            );
-          })}
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <ShieldCheck className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Используем проверенные материалы
+            </p>
+          </li>
+
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <Wrench className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Применяем профессиональный инструмент
+            </p>
+          </li>
+
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <ClipboardCheck className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Соблюдаем все нормы и правила
+            </p>
+          </li>
+
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <Clock className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Четкие сроки выполнения работ
+            </p>
+          </li>
+
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <Sparkles className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Чистота после монтажа
+            </p>
+          </li>
+
+          <li className={styles.card}>
+            <div className={styles.iconWrap}>
+              <Award className={styles.icon} />
+            </div>
+            <p className={styles.cardText}>
+              Гарантия 2 года на все работы
+            </p>
+          </li>
         </ul>
       </Container>
     </section>
