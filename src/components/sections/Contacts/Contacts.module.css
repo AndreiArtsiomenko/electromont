@@ -1,0 +1,301 @@
+.page {
+  background: #ffffff;
+}
+
+.hero {
+  padding: 96px 0 72px;
+  background: #f4f5f6;
+}
+
+.heroContent {
+  max-width: 720px;
+  margin: 0;
+  text-align: left;
+}
+
+.heroContent h1 {
+  margin: 0 0 20px;
+  color: #1e212c;
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.heroContent p {
+  margin: 0;
+  color: #787a80;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.contactsSection {
+  padding: 88px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.info,
+.formCard,
+.legalCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid rgba(30, 33, 44, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(30, 33, 44, 0.08);
+}
+
+.info h2,
+.formCard h2,
+.legalCard h2 {
+  margin: 0 0 20px;
+  color: #1e212c;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.items {
+  display: grid;
+  gap: 24px;
+}
+
+.item {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  color: #787a80;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.item p {
+  margin: 0;
+  color: #424551;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.phone {
+  color: #1e212c;
+  text-decoration: none;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.phone:hover {
+  color: var(--accent);
+}
+
+.formText {
+  margin: 0 0 24px;
+  color: #787a80;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 24px;
+  flex: 1;
+}
+
+.field,
+.fieldFull {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label,
+.fieldFull label {
+  margin-bottom: 8px;
+  color: #424551;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.field input,
+.fieldFull textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(120, 122, 128, 0.3);
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1e212c;
+  font-size: 15px;
+  line-height: 1.4;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.field input:focus,
+.fieldFull textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 90, 48, 0.12);
+}
+
+.field input::placeholder,
+.fieldFull textarea::placeholder {
+  color: #9a9ca5;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.fieldFull textarea {
+  min-height: 128px;
+  resize: vertical;
+}
+
+.button {
+  align-self: end;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 28px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 90, 48, 0.18);
+}
+
+.legalSection {
+  padding: 0 0 96px;
+}
+
+.legalTitle {
+  margin: 0 0 16px;
+  color: #1e212c;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.legalBlock {
+  display: grid;
+  gap: 12px;
+}
+
+.legalBlock p {
+  margin: 0;
+  color: #424551;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 88px 0 64px;
+  }
+
+  .contactsSection {
+    padding: 72px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info,
+  .formCard,
+  .legalCard {
+    padding: 28px;
+  }
+
+  .heroContent p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 72px 0 56px;
+  }
+
+  .contactsSection {
+    padding: 56px 0;
+  }
+
+  .legalSection {
+    padding: 0 0 72px;
+  }
+
+  .heroContent h1 {
+    margin-bottom: 16px;
+    font-size: 34px;
+  }
+
+  .heroContent p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .info,
+  .formCard,
+  .legalCard {
+    padding: 22px 20px;
+  }
+
+  .info h2,
+  .formCard h2,
+  .legalCard h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
+
+  .phone {
+    font-size: 24px;
+  }
+
+  .item p,
+  .legalBlock p {
+    font-size: 14px;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .button {
+    width: 100%;
+    justify-self: stretch;
+  }
+}

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Container from '../../ui/Container/Container';
-import PhoneIcon from '../../ui/Icons/PhoneIcon';
-import BurgerMenuIcon from '../../ui/Icons/BurgerMenuIcon';
+import PhoneIcon from '../../ui/icons/PhoneIcon';
+import BurgerMenuIcon from '../../ui/icons/BurgerMenuIcon';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -50,8 +50,8 @@ const Header = () => {
 
                 <div className={styles.contactInfo}>
                   <span className={styles.contactLabel}>Позвонить нам</span>
-                  <a className={styles.phone} href="tel:+375000000000">
-                    +375 (00) 000-00-00
+                  <a className={styles.phone} href="tel:+375293315305">
+                    +375 (29) 331-53-05
                   </a>
                 </div>
               </div>

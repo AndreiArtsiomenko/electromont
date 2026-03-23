@@ -1,15 +1,5 @@
-// import Portfolio from '../components/sections/Portfolio/Portfolio';
-
-// const PortfolioPage = () => {
-//   return <Portfolio />;
-// };
-
-// export default PortfolioPage;
+import PortfolioSection from '../components/sections/Portfolio/Portfolio';
 
 export default function Portfolio() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>Портфолио</h1>
-    </div>
-  );
+  return <PortfolioSection />;
 }

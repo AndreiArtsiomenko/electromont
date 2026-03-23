@@ -1,15 +1,5 @@
-// import Pricing from '../components/sections/Pricing/Pricing';
-
-// const PricingPage = () => {
-//   return <Pricing />;
-// };
-
-// export default PricingPage;
+import PricingSection from '../components/sections/Pricing/Pricing';
 
 export default function Pricing() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>Цены</h1>
-    </div>
-  );
+  return <PricingSection />;
 }

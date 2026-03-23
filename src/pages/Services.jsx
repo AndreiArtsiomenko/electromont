@@ -1,16 +1,5 @@
-// import Services from '../components/sections/Services/Services';
-
-// const ServicesPage = () => {
-//   return <Services />;
-// };
-
-// export default ServicesPage;
-
+import ServicesSection from '../components/sections/Services/Services';
 
 export default function Services() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>Услуги</h1>
-    </div>
-  );
+  return <ServicesSection />;
 }
