@@ -1,58 +1,65 @@
 import { Link } from 'react-router-dom';
+
 import Container from '../../../ui/Container/Container';
 import styles from './Services.module.css';
-import servicesBg from '../../../../assets/images/services-bg.jpg';
 
 const services = [
   {
+    number: '01',
     title: 'Электромонтаж под ключ',
-    text: 'Полный комплекс электромонтажных работ для квартир и частных домов.',
-    items: ['Квартиры', 'Частные дома и коттеджи'],
+    text: 'Полный комплекс электромонтажных работ для квартир, частных домов и коммерческих помещений.',
+    items: [
+      'Разводка электропроводки',
+      'Монтаж розеток и выключателей',
+      'Подключение освещения',
+    ],
   },
   {
+    number: '02',
+    title: 'Сборка и подключение щитов',
+    text: 'Собираем и подключаем электрощиты с учётом нагрузки, требований безопасности и особенностей объекта.',
+    items: [
+      'Автоматы и УЗО',
+      'Электрощиты для квартиры и дома',
+      'Замена старых щитов',
+    ],
+  },
+  {
+    number: '03',
     title: 'Освещение и подсветка',
-    text: 'Монтаж освещения — от базовых решений до декоративных световых сценариев.',
-    items: ['Светильники и люстры', 'LED-подсветка и фасадный свет'],
-  },
-  {
-    title: 'Щиты, автоматы, розетки',
-    text: 'Установка и замена электрощитов, автоматов, УЗО, розеток и выключателей.',
-    items: ['Сборка и подключение щитов', 'Розетки и выключатели'],
+    text: 'Устанавливаем основное, декоративное и фасадное освещение с аккуратным монтажом и продуманной схемой.',
+    items: [
+      'Люстры и светильники',
+      'LED-подсветка',
+      'Уличное и фасадное освещение',
+    ],
   },
 ];
 
 const Services = () => {
   return (
-    <section 
-      className={styles.services}
-      style={{
-        backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), url(${servicesBg})`,
-      }}
-    >
+    <section className={styles.services}>
       <Container>
         <div className={styles.head}>
           <h2>Наши услуги</h2>
-
-          <p className={styles.textBlock}>
-            Электромонтажные решения для любых задач. Выполняем работы аккуратно, по проекту и с соблюдением требований
-            безопасности.
+          <p>
+            Выполняем электромонтажные работы для квартир, частных домов и
+            коммерческих помещений. Подбираем решения под задачи объекта и
+            соблюдаем требования безопасности на каждом этапе.
           </p>
-
         </div>
 
         <div className={styles.grid}>
-          {services.map((service, index) => (
-            <article key={index} className={styles.card}>
-              <span className={styles.cardNumber}>
-                {String(index + 1).padStart(2, '0')}
-              </span>
+          {services.map(({ number, title, text, items }) => (
+            <article key={number} className={styles.card}>
+              <span className={styles.cardNumber}>{number}</span>
 
-              <h3>{service.title}</h3>
+              <h3>{title}</h3>
 
-              <p className={styles.cardText}>{service.text}</p>
+              <p className={styles.cardText}>{text}</p>
 
               <ul className={styles.list}>
-                {service.items.map((item) => (
+                {items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>

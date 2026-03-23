@@ -1,46 +1,62 @@
 import Container from '../../../ui/Container/Container';
 import styles from './Process.module.css';
 
-const steps = [
+const items = [
   {
+    number: '1',
     title: 'Заявка',
-    text: 'Свяжитесь с нами и мы проконсультируем вас по всем вопросам.'
+    text: 'Свяжитесь с нами, и мы проконсультируем вас по услуге, срокам и стоимости работ.',
   },
   {
-    title: 'Бесплатный выезд мастера',
-    text: 'Осмотр объекта и уточнение всех нюансов.'
+    number: '2',
+    title: 'Выезд мастера',
+    text: 'Выезжаем на объект, оцениваем объём работ и уточняем технические детали.',
   },
   {
+    number: '3',
     title: 'Заключение договора',
-    text: 'Фиксируем сроки и стоимость работ.'
+    text: 'Согласовываем условия, фиксируем сроки, стоимость и объём работ в договоре.',
   },
   {
+    number: '4',
+    title: 'Подбор материалов',
+    text: 'Помогаем подобрать надёжные материалы и комплектующие под задачи вашего объекта.',
+  },
+  {
+    number: '5',
     title: 'Выполнение работ',
-    text: 'Работаем строго по нормам и правилам.'
+    text: 'Выполняем электромонтажные работы в соответствии с действующими нормами и требованиями безопасности.',
   },
   {
-    title: 'Сдача объекта',
-    text: 'Проверка и приёмка выполненных работ.'
-  }
+    number: '6',
+    title: 'Уборка и сдача объекта',
+    text: 'Убираем строительный мусор, проверяем выполненные работы и сдаём объект заказчику.',
+  },
 ];
 
 const Process = () => {
   return (
     <section className={styles.process}>
       <Container>
-        <h2>Как мы работаем</h2>
+        <div className={styles.head}>
+          <h2>Как мы работаем</h2>
+          <p>
+            Сопровождаем проект поэтапно: от первой заявки и выезда мастера
+            до выполнения работ и сдачи готового объекта.
+          </p>
+        </div>
 
-        <ol className={styles.list}>
-          {steps.map((step, index) => (
-            <li key={index} className={styles.item}>
-              <span className={styles.number}>{index + 1}</span>
-              <div>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
+        <ul className={styles.list}>
+          {items.map(({ number, title, text }) => (
+            <li key={number} className={styles.item}>
+              <div className={styles.content}>
+                <span className={styles.number}>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
             </li>
           ))}
-        </ol>
+        </ul>
       </Container>
     </section>
   );
