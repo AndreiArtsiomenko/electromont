@@ -30,7 +30,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -39,83 +39,102 @@
 .list::before {
   content: '';
   position: absolute;
-  top: 8px;
-  bottom: 8px;
+  top: 20px;
+  bottom: 20px;
   left: 50%;
   width: 2px;
   transform: translateX(-50%);
   background: linear-gradient(
     180deg,
     rgba(255, 90, 48, 0.95) 0%,
-    rgba(255, 90, 48, 0.28) 100%
+    rgba(255, 90, 48, 0.25) 100%
   );
+  z-index: 1;
 }
 
 .item {
   position: relative;
+  z-index: 2;
   width: 50%;
   min-height: 170px;
   display: flex;
   align-items: center;
 }
 
-.item::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-  background: #ffffff;
-  box-sizing: border-box;
-  z-index: 3;
-  transform: translateY(-50%);
-}
-
 .item:nth-child(odd) {
   margin-right: auto;
-  padding-right: 64px;
+  padding-right: 104px;
   justify-content: flex-end;
   text-align: right;
 }
 
-.item:nth-child(odd)::after {
-  right: -8px;
-}
-
 .item:nth-child(even) {
   margin-left: auto;
-  padding-left: 64px;
+  padding-left: 104px;
   justify-content: flex-start;
   text-align: left;
 }
 
-.item:nth-child(even)::after {
-  left: -8px;
+.marker {
+  position: absolute;
+  top: 50%;
+  width: 108px;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  z-index: 5;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 0 6px #ffffff;
+}
+
+.marker::before,
+.marker::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.marker::before {
+  inset: 0;
+  background: rgba(255, 90, 48, 0.06);
+}
+
+.marker::after {
+  inset: 14px;
+  background: rgba(255, 90, 48, 0.12);
+}
+
+.markerNumber {
+  position: relative;
+  z-index: 2;
+  color: #ff5a30;
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.item:nth-child(odd) .marker {
+  right: -54px;
+}
+
+.item:nth-child(even) .marker {
+  left: -54px;
 }
 
 .content {
   position: relative;
   z-index: 2;
-  max-width: 360px;
-}
-
-.number {
-  display: inline-block;
-  margin-bottom: 14px;
-  color: rgba(255, 90, 48, 0.22);
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  max-width: 330px;
 }
 
 .item h3 {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   color: #1e212c;
   font-size: 22px;
-  line-height: 1.35;
+  line-height: 1.3;
   font-weight: 700;
 }
 
@@ -123,24 +142,45 @@
   margin: 0;
   color: #787a80;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
 @media (max-width: 1200px) {
   .item {
-    min-height: 156px;
+    min-height: 142px;
   }
 
   .item:nth-child(odd) {
-    padding-right: 52px;
+    padding-right: 92px;
   }
 
   .item:nth-child(even) {
-    padding-left: 52px;
+    padding-left: 92px;
+  }
+
+  .marker {
+    width: 96px;
+    height: 96px;
+  }
+
+  .marker::after {
+    inset: 12px;
+  }
+
+  .markerNumber {
+    font-size: 40px;
+  }
+
+  .item:nth-child(odd) .marker {
+    right: -48px;
+  }
+
+  .item:nth-child(even) .marker {
+    left: -48px;
   }
 
   .content {
-    max-width: 320px;
+    max-width: 300px;
   }
 }
 
@@ -158,20 +198,41 @@
     line-height: 1.6;
   }
 
+  .list {
+    gap: 20px;
+  }
+
   .item {
-    min-height: 136px;
+    min-height: 132px;
   }
 
   .item:nth-child(odd) {
-    padding-right: 40px;
+    padding-right: 76px;
   }
 
   .item:nth-child(even) {
-    padding-left: 40px;
+    padding-left: 76px;
   }
 
-  .number {
-    font-size: 52px;
+  .marker {
+    width: 82px;
+    height: 82px;
+  }
+
+  .marker::after {
+    inset: 10px;
+  }
+
+  .markerNumber {
+    font-size: 34px;
+  }
+
+  .item:nth-child(odd) .marker {
+    right: -41px;
+  }
+
+  .item:nth-child(even) .marker {
+    left: -41px;
   }
 
   .item h3 {
@@ -179,7 +240,7 @@
   }
 
   .content {
-    max-width: 280px;
+    max-width: 270px;
   }
 }
 
@@ -206,11 +267,12 @@
 
   .list {
     gap: 24px;
-    padding-left: 32px;
   }
 
   .list::before {
-    left: 8px;
+    left: 38px;
+    top: 16px;
+    bottom: 16px;
     transform: none;
   }
 
@@ -220,37 +282,42 @@
     width: 100%;
     min-height: auto;
     margin: 0;
-    padding: 0 0 0 24px;
+    padding: 0 0 0 108px;
     justify-content: flex-start;
     text-align: left;
   }
 
-  .item::after,
-  .item:nth-child(odd)::after,
-  .item:nth-child(even)::after {
-    top: 8px;
-    left: -24px;
+  .marker,
+  .item:nth-child(odd) .marker,
+  .item:nth-child(even) .marker {
+    top: 0;
+    left: 0;
     right: auto;
-    transform: translate(-50%, 0);
+    width: 76px;
+    height: 76px;
+    transform: none;
+  }
+
+  .marker::after {
+    inset: 10px;
+  }
+
+  .markerNumber {
+    font-size: 30px;
   }
 
   .content {
     max-width: 100%;
   }
 
-  .number {
-    margin-bottom: 10px;
-    font-size: 38px;
-  }
-
   .item h3 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-size: 20px;
     line-height: 1.4;
   }
 
   .item p {
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.6;
   }
 }

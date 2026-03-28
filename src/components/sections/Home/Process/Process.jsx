@@ -49,8 +49,11 @@ const Process = () => {
         <ul className={styles.list}>
           {items.map(({ number, title, text }) => (
             <li key={number} className={styles.item}>
+              <div className={styles.marker} aria-hidden="true">
+                <span className={styles.markerNumber}>{number}</span>
+              </div>
+
               <div className={styles.content}>
-                <span className={styles.number}>{number}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </div>

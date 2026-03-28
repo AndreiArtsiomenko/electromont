@@ -66,7 +66,6 @@
 }
 
 .link {
-  position: relative;
   color: var(--header-link);
   text-decoration: none;
   font-size: 15px;
@@ -78,22 +77,6 @@
 
 .link:hover {
   color: var(--header-link-hover);
-}
-
-.link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.25s ease;
-}
-
-.link:hover::after,
-.active::after {
-  width: 100%;
 }
 
 .active {
@@ -333,7 +316,7 @@
   }
 
   .contactBlock {
-    gap: 12px;
+    gap: 16px;
   }
 
   .contactIcon {
@@ -358,6 +341,10 @@
 
   .logoText {
     font-size: 16px;
+  }
+
+  .contactBlock {
+    gap: 14px;
   }
 
   .contactWrap {
@@ -400,5 +387,58 @@
 
   .mobileMenu .link {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 410px) {
+  .inner {
+    min-height: 68px;
+    gap: 8px;
+  }
+
+  .logo {
+    gap: 2px;
+  }
+
+  .logoAccent {
+    font-size: 20px;
+  }
+
+  .logoText {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .contactBlock {
+    gap: 8px;
+  }
+
+  .contactWrap {
+    gap: 0;
+  }
+
+  .contactIcon {
+    display: none;
+  }
+
+  .phone {
+    font-size: 12px;
+    line-height: 1.1;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menuIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobileMenuPanel {
+    top: 74px;
+    right: 10px;
+    width: min(260px, calc(100vw - 16px));
   }
 }
