@@ -49,6 +49,16 @@
     rgba(255, 90, 48, 0.95) 0%,
     rgba(255, 90, 48, 0.25) 100%
   );
+  -webkit-mask: repeating-linear-gradient(
+    to bottom,
+    #000 0 10px,
+    transparent 10px 18px
+  );
+  mask: repeating-linear-gradient(
+    to bottom,
+    #000 0 10px,
+    transparent 10px 18px
+  );
   z-index: 1;
 }
 
@@ -147,7 +157,7 @@
 
 @media (max-width: 1200px) {
   .item {
-    min-height: 142px;
+    min-height: 150px;
   }
 
   .item:nth-child(odd) {
@@ -302,8 +312,11 @@
     inset: 10px;
   }
 
-  .markerNumber {
+  .markerNumber,
+  .item:nth-child(odd) .markerNumber,
+  .item:nth-child(even) .markerNumber {
     font-size: 30px;
+    transform: none;
   }
 
   .content {
