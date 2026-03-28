@@ -1,19 +1,17 @@
 import Container from '../../ui/Container/Container';
+import PageHero from '../../ui/PageHero/PageHero';
+import contactsHeroImage from '../../../assets/images/contacts-hero.png';
 import styles from './Contacts.module.css';
 
 const ContactsSection = () => {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <Container>
-          <div className={styles.heroContent}>
-            <h1>Контакты</h1>
-            <p>
-              Свяжитесь с нами, чтобы обсудить сроки, стоимость и состав работ.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="Контакты"
+        description="Свяжитесь с нами, чтобы обсудить сроки, стоимость и состав работ."
+        image={contactsHeroImage}
+        imageAlt="Контакты"
+      />
 
       <section className={styles.contactsSection}>
         <Container>
@@ -85,8 +83,9 @@ const ContactsSection = () => {
           <div className={styles.legalCard}>
             <h2>Сведения о регистрации</h2>
             <p className={styles.legalTitle}>
-              Индивидуальный предприниматель Артёменко Андрей Олегович
+              Индивидуальный предприниматель Артеменко Андрей Олегович
             </p>
+
             <div className={styles.legalBlock}>
               <p>
                 Свидетельство о государственной регистрации № 491238846 от

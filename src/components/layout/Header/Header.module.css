@@ -1,10 +1,26 @@
 .header {
+  width: 100%;
+  z-index: 1000;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.headerHome {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(10px);
+  background: #f4f5f6;
   border-bottom: 1px solid var(--border);
+}
+
+.headerInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: none;
 }
 
 .inner {
@@ -38,6 +54,7 @@
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.08em;
+  transition: color 0.25s ease;
 }
 
 .nav {
@@ -80,7 +97,7 @@
 }
 
 .active {
-  color: var(--accent);
+  color: var(--accent) !important;
 }
 
 .contactBlock {
@@ -113,10 +130,10 @@
 
 .contactLabel {
   margin: 0;
+  color: var(--header-link);
   font-size: 14px;
   line-height: 1.2;
   font-weight: 700;
-  color: var(--header-link);
   white-space: nowrap;
 }
 
@@ -140,14 +157,18 @@
   width: 46px;
   height: 46px;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(30, 33, 44, 0.12);
   border-radius: 6px;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--accent);
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
-  color: var(--accent);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 
 .menuButton:hover {
@@ -156,8 +177,9 @@
 }
 
 .menuButtonOpen {
-  border-color: var(--accent);
-  background: rgba(255, 90, 48, 0.06);
+  border-color: var(--accent) !important;
+  background: rgba(255, 90, 48, 0.08) !important;
+  color: var(--accent) !important;
 }
 
 .menuIcon {
@@ -175,7 +197,7 @@
 
 .mobileMenuPanel {
   position: fixed;
-  top: 72px;
+  top: 84px;
   right: 20px;
   z-index: 1300;
   width: min(320px, calc(100vw - 32px));
@@ -198,10 +220,19 @@
   padding: 14px 0;
   font-size: 16px;
   text-align: left;
+  color: var(--header-link);
 }
 
 .mobileMenu .link::after {
   display: none;
+}
+
+.mobileMenu .link:hover {
+  color: var(--accent);
+}
+
+.mobileMenu .active {
+  color: var(--accent) !important;
 }
 
 @media (max-width: 1200px) {
@@ -280,10 +311,6 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    position: sticky;
-  }
-
   .inner {
     min-height: 72px;
     grid-template-columns: auto 1fr auto;

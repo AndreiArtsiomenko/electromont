@@ -1,0 +1,183 @@
+.hero {
+    background: #f4f5f6;
+    overflow: hidden;
+  }
+  
+  .heroLayout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 3;
+    max-width: 500px;
+    padding: 170px 0 120px;
+    text-align: left;
+  }
+  
+  .heroContent h1 {
+    margin: 0 0 24px;
+    color: #1e212c;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .heroContent p {
+    margin: 0;
+    color: #787a80;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  
+  .heroImageBox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% + 40px);
+    right: calc((100vw - 100%) / -2);
+    overflow: hidden;
+  }
+  
+  .heroImageWrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    overflow: hidden;
+  }
+  
+  .heroImageWrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      #f4f5f6 0%,
+      rgba(244, 245, 246, 0.9) 14%,
+      rgba(244, 245, 246, 0.62) 28%,
+      rgba(244, 245, 246, 0.22) 46%,
+      rgba(244, 245, 246, 0) 62%
+    );
+  }
+  
+  .heroImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 16% center;
+    transform: scale(1.03);
+    transform-origin: center;
+  }
+  
+  @media (max-width: 992px) {
+    .heroLayout {
+      min-height: 500px;
+    }
+  
+    .heroContent {
+      max-width: 420px;
+      padding: 140px 0 88px;
+    }
+  
+    .heroContent h1 {
+      font-size: 48px;
+    }
+  
+    .heroContent p {
+      font-size: 16px;
+    }
+  
+    .heroImageBox {
+      left: calc(50% - 10px);
+      right: calc((100vw - 100%) / -2);
+    }
+  
+    .heroImageWrap {
+      width: 100%;
+    }
+  
+    .heroImageWrap::before {
+      background: linear-gradient(
+        90deg,
+        #f4f5f6 0%,
+        rgba(244, 245, 246, 0.92) 18%,
+        rgba(244, 245, 246, 0.62) 34%,
+        rgba(244, 245, 246, 0.2) 52%,
+        rgba(244, 245, 246, 0) 68%
+      );
+    }
+  
+    .heroImage {
+      object-position: 20% center;
+      transform: scale(1.01);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .heroLayout {
+      min-height: 420px;
+    }
+  
+    .heroContent {
+      max-width: 320px;
+      padding: 118px 0 64px;
+    }
+  
+    .heroContent h1 {
+      margin-bottom: 16px;
+      font-size: 34px;
+    }
+  
+    .heroContent p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+  
+    .heroImageBox {
+      left: 34%;
+      right: calc((100vw - 100%) / -2);
+    }
+  
+    .heroImageWrap {
+      width: 60%;
+    }
+  
+    .heroImageWrap::before {
+      background: linear-gradient(
+        90deg,
+        #f4f5f6 0%,
+        rgba(244, 245, 246, 0.95) 18%,
+        rgba(244, 245, 246, 0.72) 38%,
+        rgba(244, 245, 246, 0.28) 60%,
+        rgba(244, 245, 246, 0) 82%
+      );
+    }
+  
+    .heroImage {
+      object-position: 24% center;
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .heroImageWrap::before {
+      background: linear-gradient(
+        90deg,
+        #f4f5f6 0%,
+        rgba(244, 245, 246, 0.99) 18%,
+        rgba(244, 245, 246, 0.95) 38%,
+        rgba(244, 245, 246, 0.84) 58%,
+        rgba(244, 245, 246, 0.6) 76%,
+        rgba(244, 245, 246, 0.28) 90%,
+        rgba(244, 245, 246, 0) 100%
+      );
+    }
+  }

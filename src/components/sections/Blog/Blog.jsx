@@ -1,3 +1,5 @@
+import PageHero from '../../ui/PageHero/PageHero';
+import contactsHeroImage from '../../../assets/images/contacts-hero.png';
 import Container from '../../ui/Container/Container';
 import styles from './Blog.module.css';
 
@@ -39,18 +41,12 @@ const posts = [
 const BlogSection = () => {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <Container>
-          <div className={styles.heroContent}>
-            <span className={styles.kicker}>БЛОГ</span>
-            <h1>Новости, статьи и полезные материалы</h1>
-            <p>
-              Делимся практическими советами по электромонтажу, обзорами решений,
-              новостями компании и материалами по безопасности.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        title="Блог"
+        description="Новости, статьи и полезные материалы по электромонтажу, безопасности и современным решениям."
+        image={contactsHeroImage}
+        imageAlt="Блог"
+      />
 
       <section className={styles.postsSection}>
         <Container>

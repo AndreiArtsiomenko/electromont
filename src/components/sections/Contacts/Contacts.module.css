@@ -2,33 +2,6 @@
   background: #ffffff;
 }
 
-.hero {
-  padding: 96px 0 72px;
-  background: #f4f5f6;
-}
-
-.heroContent {
-  max-width: 720px;
-  margin: 0;
-  text-align: left;
-}
-
-.heroContent h1 {
-  margin: 0 0 20px;
-  color: #1e212c;
-  font-size: clamp(36px, 5vw, 52px);
-  line-height: 1.15;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.heroContent p {
-  margin: 0;
-  color: #787a80;
-  font-size: 18px;
-  line-height: 1.65;
-}
-
 .contactsSection {
   padding: 88px 0;
 }
@@ -221,10 +194,6 @@
 }
 
 @media (max-width: 992px) {
-  .hero {
-    padding: 88px 0 64px;
-  }
-
   .contactsSection {
     padding: 72px 0;
   }
@@ -238,33 +207,15 @@
   .legalCard {
     padding: 28px;
   }
-
-  .heroContent p {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 640px) {
-  .hero {
-    padding: 72px 0 56px;
-  }
-
   .contactsSection {
     padding: 56px 0;
   }
 
   .legalSection {
     padding: 0 0 72px;
-  }
-
-  .heroContent h1 {
-    margin-bottom: 16px;
-    font-size: 34px;
-  }
-
-  .heroContent p {
-    font-size: 15px;
-    line-height: 1.6;
   }
 
   .info,

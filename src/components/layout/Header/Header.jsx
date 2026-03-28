@@ -1,21 +1,28 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from '../../ui/Container/Container';
-import PhoneIcon from '../../ui/icons/PhoneIcon';
-import BurgerMenuIcon from '../../ui/icons/BurgerMenuIcon';
+import PhoneIcon from '../../ui/Icons/PhoneIcon';
+import BurgerMenuIcon from '../../ui/Icons/BurgerMenuIcon';
 import styles from './Header.module.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === '/';
 
   const navLinkClass = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.active}` : styles.link;
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const headerClassName = `${styles.header} ${
+    isHomePage ? styles.headerHome : styles.headerInner
+  }`;
+
   return (
     <>
-      <header className={styles.header}>
+      <header className={headerClassName}>
         <Container>
           <div className={styles.inner}>
             <Link to="/" className={styles.logo} onClick={closeMenu}>
@@ -74,27 +81,27 @@ const Header = () => {
         <>
           <div className={styles.backdrop} onClick={closeMenu}></div>
 
-          <div className={styles.mobileMenuPanel}>     
-              <div className={styles.mobileMenu}>
-                <NavLink to="/" className={navLinkClass} onClick={closeMenu}>
-                  Главная
-                </NavLink>
-                <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>
-                  Услуги
-                </NavLink>
-                <NavLink to="/pricing" className={navLinkClass} onClick={closeMenu}>
-                  Цены
-                </NavLink>
-                <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>
-                  Портфолио
-                </NavLink>
-                <NavLink to="/blog" className={navLinkClass} onClick={closeMenu}>
-                  Блог
-                </NavLink>
-                <NavLink to="/contacts" className={navLinkClass} onClick={closeMenu}>
-                  Контакты
-                </NavLink>
-              </div>
+          <div className={styles.mobileMenuPanel}>
+            <div className={styles.mobileMenu}>
+              <NavLink to="/" className={navLinkClass} onClick={closeMenu}>
+                Главная
+              </NavLink>
+              <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>
+                Услуги
+              </NavLink>
+              <NavLink to="/pricing" className={navLinkClass} onClick={closeMenu}>
+                Цены
+              </NavLink>
+              <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>
+                Портфолио
+              </NavLink>
+              <NavLink to="/blog" className={navLinkClass} onClick={closeMenu}>
+                Блог
+              </NavLink>
+              <NavLink to="/contacts" className={navLinkClass} onClick={closeMenu}>
+                Контакты
+              </NavLink>
+            </div>
           </div>
         </>
       )}
