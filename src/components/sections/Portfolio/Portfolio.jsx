@@ -1,5 +1,5 @@
 import PageHero from '../../ui/PageHero/PageHero';
-import contactsHeroImage from '../../../assets/images/contacts-hero.png';
+import contactsHeroImage from '../../../assets/images/portfolio-hero.png';
 import Container from '../../ui/Container/Container';
 import styles from './Portfolio.module.css';
 

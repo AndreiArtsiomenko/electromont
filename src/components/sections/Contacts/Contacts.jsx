@@ -34,7 +34,7 @@ const ContactsSection = () => {
 
                 <div className={styles.item}>
                   <span className={styles.label}>Адрес</span>
-                  <p>246030, г. Гомель, ул. Леонова 16/89</p>
+                  <p>246030, г. Гомель, ул. Леонова</p>
                 </div>
               </div>
             </div>

@@ -26,8 +26,8 @@ const Header = () => {
         <Container>
           <div className={styles.inner}>
             <Link to="/" className={styles.logo} onClick={closeMenu}>
-              <span className={styles.logoAccent}>EL</span>
-              <span className={styles.logoText}>ECTROMONT</span>
+              <span className={styles.logoAccent}>Ток</span>
+              <span className={styles.logoText}>в Дом</span>
             </Link>
 
             <nav className={styles.nav}>
