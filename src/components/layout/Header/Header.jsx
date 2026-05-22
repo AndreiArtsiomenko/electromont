@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from '../../ui/Container/Container';
-import PhoneIcon from '../../ui/Icons/PhoneIcon';
-import BurgerMenuIcon from '../../ui/Icons/BurgerMenuIcon';
+import Logo from '../../ui/Logo/Logo';
+import PhoneIcon from '../../ui/icons/PhoneIcon';
+import BurgerMenuIcon from '../../ui/icons/BurgerMenuIcon';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -26,8 +27,7 @@ const Header = () => {
         <Container>
           <div className={styles.inner}>
             <Link to="/" className={styles.logo} onClick={closeMenu}>
-              <span className={styles.logoAccent}>EL</span>
-              <span className={styles.logoText}>ECTROMONT</span>
+              <Logo />
             </Link>
 
             <nav className={styles.nav}>
@@ -73,38 +73,43 @@ const Header = () => {
                 <BurgerMenuIcon className={styles.menuIcon} isOpen={isMenuOpen} />
               </button>
             </div>
+
+            {isMenuOpen && (
+              <div className={styles.mobileMenuPanel}>
+                <button
+                  type="button"
+                  className={styles.mobileMenuClose}
+                  aria-label="Закрыть меню"
+                  onClick={closeMenu}
+                >
+                  <BurgerMenuIcon className={styles.menuIcon} isOpen />
+                </button>
+
+                <NavLink to="/" className={navLinkClass} onClick={closeMenu}>
+                  Главная
+                </NavLink>
+                <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>
+                  Услуги
+                </NavLink>
+                <NavLink to="/pricing" className={navLinkClass} onClick={closeMenu}>
+                  Цены
+                </NavLink>
+                <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>
+                  Портфолио
+                </NavLink>
+                <NavLink to="/blog" className={navLinkClass} onClick={closeMenu}>
+                  Блог
+                </NavLink>
+                <NavLink to="/contacts" className={navLinkClass} onClick={closeMenu}>
+                  Контакты
+                </NavLink>
+              </div>
+            )}
           </div>
         </Container>
       </header>
 
-      {isMenuOpen && (
-        <>
-          <div className={styles.backdrop} onClick={closeMenu}></div>
-
-          <div className={styles.mobileMenuPanel}>
-            <div className={styles.mobileMenu}>
-              <NavLink to="/" className={navLinkClass} onClick={closeMenu}>
-                Главная
-              </NavLink>
-              <NavLink to="/services" className={navLinkClass} onClick={closeMenu}>
-                Услуги
-              </NavLink>
-              <NavLink to="/pricing" className={navLinkClass} onClick={closeMenu}>
-                Цены
-              </NavLink>
-              <NavLink to="/portfolio" className={navLinkClass} onClick={closeMenu}>
-                Портфолио
-              </NavLink>
-              <NavLink to="/blog" className={navLinkClass} onClick={closeMenu}>
-                Блог
-              </NavLink>
-              <NavLink to="/contacts" className={navLinkClass} onClick={closeMenu}>
-                Контакты
-              </NavLink>
-            </div>
-          </div>
-        </>
-      )}
+      {isMenuOpen && <div className={styles.backdrop} onClick={closeMenu}></div>}
     </>
   );
 };

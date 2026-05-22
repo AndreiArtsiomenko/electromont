@@ -29,10 +29,90 @@
 }
 
 .card p {
-  margin: 0;
+  margin: 0 0 18px;
   color: var(--text-main);
   font-size: 16px;
   line-height: 1.7;
+}
+
+.card ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--text-main);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.card li::before {
+  content: '';
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-50%);
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 40px;
+  padding: 32px;
+  border-radius: 6px;
+  background: var(--bg-light);
+}
+
+.cta h2 {
+  margin: 0 0 10px;
+  color: var(--dark);
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.cta p {
+  max-width: 640px;
+  margin: 0;
+  color: var(--text-main);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 90, 48, 0.18);
 }
 
 @media (max-width: 992px) {
@@ -42,6 +122,11 @@
 
   .contentSection {
     padding: 72px 0;
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -56,5 +141,17 @@
 
   .card h2 {
     font-size: 22px;
+  }
+
+  .cta {
+    padding: 24px 20px;
+  }
+
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .ctaButton {
+    width: 100%;
   }
 }

@@ -17,6 +17,10 @@
   .brand {
     max-width: none;
   }
+
+  .footerLogo {
+    margin-bottom: 24px;
+  }
   
   .legalTitle {
     margin: 0 0 18px;

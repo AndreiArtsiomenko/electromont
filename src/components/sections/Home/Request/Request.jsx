@@ -1,7 +1,16 @@
+import { useState } from 'react';
 import Container from '../../../ui/Container/Container';
 import styles from './Request.module.css';
 
 const Request = () => {
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    setIsSent(true);
+  };
+
   return (
     <section className={styles.request}>
       <Container>
@@ -14,15 +23,15 @@ const Request = () => {
             </p>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.field}>
               <label htmlFor="name">Ваше имя</label>
-              <input id="name" type="text" placeholder="Введите имя" />
+              <input id="name" type="text" placeholder="Введите имя" required />
             </div>
 
             <div className={styles.field}>
               <label htmlFor="phone">Телефон</label>
-              <input id="phone" type="tel" placeholder="+375 (___) ___-__-__" />
+              <input id="phone" type="tel" placeholder="+375 (___) ___-__-__" required />
             </div>
 
             <div className={styles.fieldFull}>
@@ -37,6 +46,10 @@ const Request = () => {
             <button type="submit" className={styles.button}>
               Отправить заявку
             </button>
+
+            {isSent && (
+              <p className={styles.note}>Заявка подготовлена. Осталось подключить отправку на почту или в CRM.</p>
+            )}
           </form>
         </div>
       </Container>

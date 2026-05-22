@@ -62,7 +62,7 @@ const BlogSection = () => {
                 <h2>{post.title}</h2>
                 <p>{post.excerpt}</p>
 
-                <button className={styles.readMore}>Читать статью</button>
+                <button type="button" className={styles.readMore}>Читать статью</button>
               </article>
             ))}
           </div>

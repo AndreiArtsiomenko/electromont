@@ -169,6 +169,14 @@
   box-shadow: 0 10px 20px rgba(255, 90, 48, 0.18);
 }
 
+.formNote {
+  align-self: center;
+  margin: 0;
+  color: #787a80;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .legalSection {
   padding: 0 0 96px;
 }
@@ -248,5 +256,9 @@
   .button {
     width: 100%;
     justify-self: stretch;
+  }
+
+  .formNote {
+    text-align: center;
   }
 }

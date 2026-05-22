@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Container from '../../ui/Container/Container';
+import Logo from '../../ui/Logo/Logo';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -8,6 +9,8 @@ const Footer = () => {
       <Container>
         <div className={styles.top}>
           <div className={styles.brand}>
+            <Logo className={styles.footerLogo} variant="light" />
+
             <p className={styles.legalTitle}>
               Индивидуальный предприниматель Артёменко Андрей Олегович
             </p>

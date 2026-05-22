@@ -1,5 +1,6 @@
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import ScrollTopButton from '../ui/ScrollTopButton/ScrollTopButton';
 import { Outlet } from 'react-router-dom';
 
 // const Layout = ({ children }) => {
@@ -21,6 +22,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
+      <ScrollTopButton />
       <Footer />
     </>
   );

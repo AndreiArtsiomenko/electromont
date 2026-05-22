@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  z-index: 1000;
+  z-index: 1500;
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
@@ -35,26 +35,8 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.logoAccent {
-  color: var(--accent);
-  font-size: 30px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.logoText {
-  color: var(--dark);
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  transition: color 0.25s ease;
 }
 
 .nav {
@@ -136,6 +118,8 @@
 }
 
 .menuButton {
+  position: relative;
+  z-index: 1700;
   display: none;
   width: 46px;
   height: 46px;
@@ -160,9 +144,8 @@
 }
 
 .menuButtonOpen {
-  border-color: var(--accent) !important;
-  background: rgba(255, 90, 48, 0.08) !important;
-  color: var(--accent) !important;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .menuIcon {
@@ -179,42 +162,66 @@
 }
 
 .mobileMenuPanel {
-  position: fixed;
-  top: 84px;
-  right: 20px;
-  z-index: 1300;
+  position: absolute;
+  top: 12px;
+  right: -10px;
+  z-index: 1600;
   width: min(320px, calc(100vw - 32px));
-}
-
-.mobileMenu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  padding: 16px 20px;
+  padding: 16px 22px 16px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
-.mobileMenu .link {
+.mobileMenuClose {
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(30, 33, 44, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 90, 48, 0.08);
+  color: var(--accent);
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobileMenuClose:hover {
+  border-color: var(--accent);
+  background: rgba(255, 90, 48, 0.14);
+  transform: translateY(-1px);
+}
+
+.mobileMenuPanel .link {
   width: 100%;
-  padding: 14px 0;
+  padding: 14px 58px 14px 0;
   font-size: 16px;
   text-align: left;
   color: var(--header-link);
 }
 
-.mobileMenu .link::after {
+.mobileMenuPanel .link::after {
   display: none;
 }
 
-.mobileMenu .link:hover {
+.mobileMenuPanel .link:hover {
   color: var(--accent);
 }
 
-.mobileMenu .active {
+.mobileMenuPanel .active {
   color: var(--accent) !important;
 }
 
@@ -230,14 +237,6 @@
 
   .link {
     font-size: 14px;
-  }
-
-  .logoAccent {
-    font-size: 26px;
-  }
-
-  .logoText {
-    font-size: 20px;
   }
 
   .contactIcon {
@@ -265,14 +264,6 @@
 
   .link {
     font-size: 13px;
-  }
-
-  .logoAccent {
-    font-size: 24px;
-  }
-
-  .logoText {
-    font-size: 18px;
   }
 
   .contactWrap {
@@ -310,8 +301,7 @@
   }
 
   .mobileMenuPanel {
-    top: 84px;
-    right: 16px;
+    right: -8px;
     width: min(300px, calc(100vw - 24px));
   }
 
@@ -335,14 +325,6 @@
 }
 
 @media (max-width: 560px) {
-  .logoAccent {
-    font-size: 22px;
-  }
-
-  .logoText {
-    font-size: 16px;
-  }
-
   .contactBlock {
     gap: 14px;
   }
@@ -376,16 +358,20 @@
   }
 
   .mobileMenuPanel {
-    top: 78px;
-    right: 12px;
+    top: 10px;
+    right: -6px;
     width: min(280px, calc(100vw - 20px));
+    padding: 14px 18px;
   }
 
-  .mobileMenu {
-    padding: 14px 16px;
+  .mobileMenuClose {
+    top: 16px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
   }
 
-  .mobileMenu .link {
+  .mobileMenuPanel .link {
     font-size: 15px;
   }
 }
@@ -394,19 +380,6 @@
   .inner {
     min-height: 68px;
     gap: 8px;
-  }
-
-  .logo {
-    gap: 2px;
-  }
-
-  .logoAccent {
-    font-size: 20px;
-  }
-
-  .logoText {
-    font-size: 14px;
-    letter-spacing: 0.05em;
   }
 
   .contactBlock {
@@ -437,8 +410,13 @@
   }
 
   .mobileMenuPanel {
-    top: 74px;
-    right: 10px;
+    top: 10px;
+    right: -4px;
     width: min(260px, calc(100vw - 16px));
+  }
+
+  .mobileMenuClose {
+    width: 38px;
+    height: 38px;
   }
 }

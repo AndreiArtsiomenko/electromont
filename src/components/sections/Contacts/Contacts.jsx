@@ -1,9 +1,18 @@
+import { useState } from 'react';
 import Container from '../../ui/Container/Container';
 import PageHero from '../../ui/PageHero/PageHero';
 import contactsHeroImage from '../../../assets/images/contacts-hero.png';
 import styles from './Contacts.module.css';
 
 const ContactsSection = () => {
+  const [isSent, setIsSent] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    setIsSent(true);
+  };
+
   return (
     <main className={styles.page}>
       <PageHero
@@ -45,10 +54,10 @@ const ContactsSection = () => {
                 Заполните форму, и мы свяжемся с вами, чтобы обсудить задачу.
               </p>
 
-              <form className={styles.form}>
+              <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.field}>
                   <label htmlFor="name">Ваше имя</label>
-                  <input id="name" type="text" placeholder="Введите имя" />
+                  <input id="name" type="text" placeholder="Введите имя" required />
                 </div>
 
                 <div className={styles.field}>
@@ -57,6 +66,7 @@ const ContactsSection = () => {
                     id="phone"
                     type="tel"
                     placeholder="+375 (__) ___-__-__"
+                    required
                   />
                 </div>
 
@@ -72,6 +82,10 @@ const ContactsSection = () => {
                 <button type="submit" className={styles.button}>
                   Отправить заявку
                 </button>
+
+                {isSent && (
+                  <p className={styles.formNote}>Заявка подготовлена. Для рабочей отправки осталось подключить обработчик формы.</p>
+                )}
               </form>
             </div>
           </div>
