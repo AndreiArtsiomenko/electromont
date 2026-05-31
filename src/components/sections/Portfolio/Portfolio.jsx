@@ -1,5 +1,5 @@
 import PageHero from '../../ui/PageHero/PageHero';
-import contactsHeroImage from '../../../assets/images/portfolio-hero.png';
+import contactsHeroImage from '../../../assets/images/portfolio-hero.webp';
 import Container from '../../ui/Container/Container';
 import styles from './Portfolio.module.css';
 
@@ -32,7 +32,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <PageHero
         title="Портфолио"
         description="Несколько примеров выполненных объектов: квартиры, дома и коммерческие помещения."
@@ -57,6 +57,6 @@ export default function Portfolio() {
           </div>
         </Container>
       </section>
-    </main>
+    </div>
   );
 }

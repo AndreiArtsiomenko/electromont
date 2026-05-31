@@ -1,7 +1,7 @@
 .services {
   position: relative;
   padding: 120px 0 128px;
-  background: url('../../../../assets/images/services-bg-custom.png') center / cover no-repeat;
+  background: url('../../../../assets/images/services-bg-custom.webp') center / cover no-repeat;
   overflow: hidden;
 }
 
@@ -9,14 +9,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(30, 33, 44, 0.84) 0%,
-      rgba(30, 33, 44, 0.76) 34%,
-      rgba(30, 33, 44, 0.62) 66%,
-      rgba(30, 33, 44, 0.48) 100%
-    );
+  background: rgba(30, 33, 44, 0.72);
   z-index: 0;
 }
 
@@ -45,7 +38,7 @@
   max-width: 760px;
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.65;
 }
 
@@ -84,7 +77,7 @@
   display: inline-block;
   margin-bottom: 18px;
   color: rgba(255, 90, 48, 0.72);
-  font-size: 14px;
+  font-size: var(--text-sm);
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -101,7 +94,7 @@
 .cardText {
   margin: 0 0 20px;
   color: #424551;
-  font-size: 16px;
+  font-size: var(--text);
   line-height: 1.65;
 }
 
@@ -115,7 +108,7 @@
   position: relative;
   padding-left: 18px;
   color: #424551;
-  font-size: 15px;
+  font-size: var(--text);
   line-height: 1.7;
 }
 
@@ -147,7 +140,7 @@
   background: transparent;
   color: var(--accent);
   text-decoration: none;
-  font-size: 15px;
+  font-size: var(--text);
   line-height: 1;
   font-weight: 700;
   transition:
@@ -170,23 +163,12 @@
     background-position: center;
   }
 
-  .services::before {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(30, 33, 44, 0.88) 0%,
-        rgba(30, 33, 44, 0.80) 42%,
-        rgba(30, 33, 44, 0.68) 70%,
-        rgba(30, 33, 44, 0.54) 100%
-      );
-  }
-
   .head {
     margin-bottom: 44px;
   }
 
   .head p {
-    font-size: 16px;
+    font-size: var(--text);
     line-height: 1.6;
   }
 
@@ -215,16 +197,6 @@
     background-position: center top;
   }
 
-  .services::before {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(30, 33, 44, 0.90) 0%,
-        rgba(30, 33, 44, 0.82) 42%,
-        rgba(30, 33, 44, 0.72) 100%
-      );
-  }
-
   .head {
     margin-bottom: 32px;
   }
@@ -236,7 +208,7 @@
 
   .head p {
     max-width: none;
-    font-size: 15px;
+    font-size: var(--text);
     line-height: 1.6;
   }
 
@@ -250,11 +222,11 @@
   }
 
   .card h3 {
-    font-size: 20px;
+    font-size: var(--text-lead);
   }
 
   .cardText {
-    font-size: 15px;
+    font-size: var(--text);
   }
 
   .btn {

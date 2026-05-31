@@ -24,7 +24,12 @@
   --h1: 72px;
   --h2: 46px;
   --h3: 28px;
+
   --text: 16px;
+  --text-sm: 14px;
+  --text-xs: 13px;
+  --text-lg: 18px;
+  --text-lead: 20px;
 
   --radius: 16px;
   --radius-sm: 10px;

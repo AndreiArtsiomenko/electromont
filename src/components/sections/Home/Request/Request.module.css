@@ -31,7 +31,7 @@
   .content p {
     margin: 0;
     color: #787a80;
-    font-size: 18px;
+    font-size: var(--text-lg);
     line-height: 1.65;
   }
   
@@ -51,7 +51,7 @@
   .fieldFull label {
     margin-bottom: 8px;
     color: #424551;
-    font-size: 14px;
+    font-size: var(--text-sm);
     line-height: 1.4;
     font-weight: 700;
   }
@@ -64,7 +64,7 @@
     border-radius: 4px;
     background: #ffffff;
     color: #1e212c;
-    font-size: 15px;
+    font-size: var(--text);
     line-height: 1.4;
     outline: none;
     transition:
@@ -103,7 +103,7 @@
     border-radius: 4px;
     background: var(--accent);
     color: var(--white);
-    font-size: 15px;
+    font-size: var(--text);
     line-height: 1;
     font-weight: 700;
     cursor: pointer;
@@ -125,7 +125,7 @@
     align-self: center;
     margin: 0;
     color: #787a80;
-    font-size: 13px;
+    font-size: var(--text-xs);
     line-height: 1.5;
   }
   
@@ -145,7 +145,7 @@
     }
   
     .content p {
-      font-size: 16px;
+      font-size: var(--text);
       line-height: 1.6;
     }
   }
@@ -166,7 +166,7 @@
     }
   
     .content p {
-      font-size: 15px;
+      font-size: var(--text);
     }
   
     .form {

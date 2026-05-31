@@ -1,6 +1,6 @@
-import ReliabilityIcon from '../../../ui/icons/ReliabilityIcon';
-import SafetyIcon from '../../../ui/icons/SafetyIcon';
-import ComfortIcon from '../../../ui/icons/ComfortIcon';
+import ReliabilityIcon from '../../../ui/Icons/ReliabilityIcon';
+import SafetyIcon from '../../../ui/Icons/SafetyIcon';
+import ComfortIcon from '../../../ui/Icons/ComfortIcon';
 
 import Container from '../../../ui/Container/Container';
 import styles from './Advantages.module.css';

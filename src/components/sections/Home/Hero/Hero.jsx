@@ -24,10 +24,6 @@ const Hero = () => {
               <Link to="/contacts" className={styles.primaryBtn}>
                 Оставить заявку
               </Link>
-
-              <Link to="/portfolio" className={styles.secondaryBtn}>
-                Смотреть проекты
-              </Link>
             </div>
 
             <div className={styles.metrics}>

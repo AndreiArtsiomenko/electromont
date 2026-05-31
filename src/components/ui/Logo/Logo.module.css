@@ -6,64 +6,13 @@
   white-space: nowrap;
 }
 
-.wordmark {
-  display: grid;
-  gap: 3px;
-}
-
-.title {
-  color: currentColor;
-  font-size: 24px;
-  line-height: 0.95;
-  font-weight: 700;
-  letter-spacing: 0;
-}
-
-.caption {
-  color: var(--text-muted);
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .light {
   color: var(--white);
-}
-
-.light .caption {
-  color: rgba(255, 255, 255, 0.66);
-}
-
-@media (max-width: 1200px) {
-  .title {
-    font-size: 21px;
-  }
-}
-
-@media (max-width: 992px) {
-  .title {
-    font-size: 19px;
-  }
-
-  .caption {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 560px) {
-  .title {
-    font-size: 18px;
-  }
-
-  .caption {
-    display: none;
-  }
-}
-
-@media (max-width: 410px) {
-  .title {
-    font-size: 16px;
-  }
 }

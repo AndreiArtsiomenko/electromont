@@ -1,4 +1,5 @@
 .hero {
+    margin-top: -92px;
     background: #f4f5f6;
     overflow: hidden;
   }
@@ -14,7 +15,7 @@
     position: relative;
     z-index: 3;
     max-width: 500px;
-    padding: 170px 0 120px;
+    padding: 110px 0 120px;
     text-align: left;
   }
   
@@ -30,7 +31,7 @@
   .heroContent p {
     margin: 0;
     color: #787a80;
-    font-size: 20px;
+    font-size: var(--text-lead);
     line-height: 1.6;
   }
   
@@ -78,13 +79,17 @@
   }
   
   @media (max-width: 992px) {
+    .hero {
+      margin-top: -84px;
+    }
+
     .heroLayout {
       min-height: 500px;
     }
   
     .heroContent {
       max-width: 420px;
-      padding: 140px 0 88px;
+      padding: 100px 0 88px;
     }
   
     .heroContent h1 {
@@ -92,7 +97,7 @@
     }
   
     .heroContent p {
-      font-size: 16px;
+      font-size: var(--text);
     }
   
     .heroImageBox {
@@ -122,13 +127,17 @@
   }
   
   @media (max-width: 640px) {
+    .hero {
+      margin-top: -72px;
+    }
+
     .heroLayout {
       min-height: 420px;
     }
   
     .heroContent {
       max-width: 320px;
-      padding: 118px 0 64px;
+      padding: 88px 0 64px;
     }
   
     .heroContent h1 {
@@ -137,7 +146,7 @@
     }
   
     .heroContent p {
-      font-size: 15px;
+      font-size: var(--text);
       line-height: 1.6;
     }
   
@@ -167,6 +176,12 @@
     }
   }
   
+  @media (max-width: 410px) {
+    .hero {
+      margin-top: -68px;
+    }
+  }
+
   @media (max-width: 420px) {
     .heroImageWrap::before {
       background: linear-gradient(

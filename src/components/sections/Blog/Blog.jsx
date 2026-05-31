@@ -1,5 +1,5 @@
 import PageHero from '../../ui/PageHero/PageHero';
-import contactsHeroImage from '../../../assets/images/blog-hero.png';
+import contactsHeroImage from '../../../assets/images/blog-hero.webp';
 import Container from '../../ui/Container/Container';
 import styles from './Blog.module.css';
 
@@ -40,7 +40,7 @@ const posts = [
 
 const BlogSection = () => {
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <PageHero
         title="Блог"
         description="Новости, статьи и полезные материалы по электромонтажу, безопасности и современным решениям."
@@ -68,7 +68,7 @@ const BlogSection = () => {
           </div>
         </Container>
       </section>
-    </main>
+    </div>
   );
 };
 

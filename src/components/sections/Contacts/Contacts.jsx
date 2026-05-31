@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Container from '../../ui/Container/Container';
 import PageHero from '../../ui/PageHero/PageHero';
-import contactsHeroImage from '../../../assets/images/contacts-hero.png';
+import contactsHeroImage from '../../../assets/images/contacts-hero.webp';
 import styles from './Contacts.module.css';
 
 const ContactsSection = () => {
@@ -14,10 +14,10 @@ const ContactsSection = () => {
   };
 
   return (
-    <main className={styles.page}>
+    <div className={styles.page}>
       <PageHero
         title="Контакты"
-        description="Свяжитесь с нами, чтобы обсудить сроки, стоимость и состав работ."
+        description="Свяжитесь с нами, чтобы обсудить сроки, стоимость и перечень работ."
         image={contactsHeroImage}
         imageAlt="Контакты"
       />
@@ -38,12 +38,12 @@ const ContactsSection = () => {
 
                 <div className={styles.item}>
                   <span className={styles.label}>Время работы</span>
-                  <p>Пн-Вс, 9.00–18.00</p>
+                  <p>Пн-Пт, 9.00–18.00</p>
                 </div>
 
                 <div className={styles.item}>
                   <span className={styles.label}>Адрес</span>
-                  <p>246030, г. Гомель, ул. Леонова</p>
+                  <p>246030, г. Гомель, ул. Леонова 16</p>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ const ContactsSection = () => {
           <div className={styles.legalCard}>
             <h2>Сведения о регистрации</h2>
             <p className={styles.legalTitle}>
-              Индивидуальный предприниматель Артеменко Андрей Олегович
+              Индивидуальный предприниматель Артёменко Андрей Олегович
             </p>
 
             <div className={styles.legalBlock}>
@@ -115,7 +115,7 @@ const ContactsSection = () => {
           </div>
         </Container>
       </section>
-    </main>
+    </div>
   );
 };
 

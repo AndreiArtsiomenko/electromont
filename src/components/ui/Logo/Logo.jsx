@@ -1,5 +1,5 @@
 import styles from './Logo.module.css';
-import logoImage from '../../../assets/images/logo-header.png';
+import logoImage from '../../../assets/images/logo-header.svg';
 
 const Logo = ({ className = '', variant = 'dark' }) => {
   const classNames = [styles.logo, styles[variant], className].filter(Boolean).join(' ');

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from '../../ui/Container/Container';
 import Logo from '../../ui/Logo/Logo';
-import PhoneIcon from '../../ui/icons/PhoneIcon';
-import BurgerMenuIcon from '../../ui/icons/BurgerMenuIcon';
+import PhoneIcon from '../../ui/Icons/PhoneIcon';
+import BurgerMenuIcon from '../../ui/Icons/BurgerMenuIcon';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -11,15 +11,53 @@ const Header = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinkClass = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.active}` : styles.link;
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const headerClassName = `${styles.header} ${
-    isHomePage ? styles.headerHome : styles.headerInner
-  }`;
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 32);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const headerClassName = [
+    styles.header,
+    isHomePage
+      ? styles.headerHome
+      : isScrolled
+        ? styles.headerScrolled
+        : styles.headerTop,
+  ].join(' ');
 
   return (
     <>
@@ -27,12 +65,7 @@ const Header = () => {
         <Container>
           <div className={styles.inner}>
             <Link to="/" className={styles.logo} onClick={closeMenu}>
-<<<<<<< HEAD
               <Logo />
-=======
-              <span className={styles.logoAccent}>Ток</span>
-              <span className={styles.logoText}>в Дом</span>
->>>>>>> d178ca8e7f9e813d20b1bfaa320e77ff4de74618
             </Link>
 
             <nav className={styles.nav}>
