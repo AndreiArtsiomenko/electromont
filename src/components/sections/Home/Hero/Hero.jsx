@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import Container from '../../../ui/Container/Container';
+import heroImage from '../../../../assets/hero.png';
 import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.overlay}>
-        <Container>
-          <div className={styles.content}>
+      <Container>
+        <div className={styles.heroLayout}>
+          <div className={styles.heroContent}>
             <h1>
               Электромонтажные работы
               <br />
@@ -43,8 +44,18 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </Container>
-      </div>
+
+          <div className={styles.heroImageBox}>
+            <div className={styles.heroImageWrap}>
+              <img
+                src={heroImage}
+                alt="Электромонтажные работы"
+                className={styles.heroImage}
+              />
+            </div>
+          </div>
+        </div>
+      </Container>
     </section>
   );
 };

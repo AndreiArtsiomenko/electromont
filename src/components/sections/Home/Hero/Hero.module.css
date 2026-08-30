@@ -1,64 +1,52 @@
 .hero {
+  background: #f4f5f6;
+  overflow: hidden;
+}
+
+.heroLayout {
   position: relative;
-  min-height: calc(80vh - 92px);
   display: flex;
   align-items: center;
-  overflow: hidden;
-  color: var(--white);
-  background: url('../../../../assets/hero.png') center / cover no-repeat;
+  min-height: 600px;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(30, 33, 44, 0.70);
-  z-index: 0;
-}
-
-.overlay {
+.heroContent {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 120px 0 120px;
+  z-index: 3;
+  max-width: 580px;
+  padding: 72px 0 80px;
+  text-align: left;
 }
 
-.content {
-  max-width: 760px;
-}
-
-.content h1 {
+.heroContent h1 {
   margin: 0 0 24px;
-  max-width: 900px;
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1.04;
-  font-weight: 900;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--white);
+  color: #1e212c;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .description {
-  max-width: 620px;
-  margin: 0 0 40px;
+  margin: 0 0 32px;
+  color: #787a80;
   font-size: var(--text-lead);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 56px;
+  margin-bottom: 32px;
 }
 
 .primaryBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
-  padding: 0 32px;
+  min-height: 52px;
+  padding: 0 28px;
   border-radius: 4px;
   font-size: var(--text);
   font-weight: 700;
@@ -70,7 +58,6 @@
   transition:
     transform 0.25s ease,
     background-color 0.25s ease,
-    color 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
@@ -85,18 +72,17 @@
 .metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  max-width: 600px;
+  gap: 12px;
 }
 
 .metricCard {
   display: flex;
   flex-direction: column;
-  padding: 18px 20px 16px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 16px 14px 14px;
+  background: var(--white);
+  border: 1px solid rgba(30, 33, 44, 0.08);
   border-radius: 4px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(30, 33, 44, 0.08);
 }
 
 .metricCard strong {
@@ -114,70 +100,159 @@
   line-height: 1.45;
 }
 
+.heroImageBox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: calc((100vw - 100%) / -2);
+  overflow: hidden;
+}
+
+.heroImageWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.heroImageWrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #f4f5f6 0%,
+    rgba(244, 245, 246, 0.9) 20%,
+    rgba(244, 245, 246, 0.62) 35%,
+    rgba(244, 245, 246, 0.22) 56%,
+    rgba(244, 245, 246, 0) 72%
+  );
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 16% center;
+  transform: scale(1.03);
+  transform-origin: center;
+}
+
 @media (max-width: 992px) {
-  .hero {
-    min-height: calc(70vh - 84px);
-    background-position: 62% center;
+  .heroLayout {
+    min-height: 500px;
   }
 
-  .overlay {
-    padding: 80px 0 80px;
+  .heroContent {
+    max-width: 520px;
+    padding: 56px 0 64px;
   }
 
-  .content h1 {
-    font-size: clamp(38px, 8vw, 56px);
+  .heroContent h1 {
+    font-size: 40px;
   }
 
   .description {
-    font-size: var(--text-lg);
+    font-size: var(--text);
+  }
+
+  .heroImageBox {
+    left: 40px;
+    right: calc((100vw - 100%) / -2);
+  }
+
+  .heroImageWrap {
+    width: 100%;
+  }
+
+  .heroImageWrap::before {
+    background: linear-gradient(
+      90deg,
+      #f4f5f6 0%,
+      rgba(244, 245, 246, 0.92) 18%,
+      rgba(244, 245, 246, 0.62) 34%,
+      rgba(244, 245, 246, 0.2) 52%,
+      rgba(244, 245, 246, 0) 68%
+    );
+  }
+
+  .heroImage {
+    object-position: 20% center;
+    transform: scale(1.01);
   }
 
   .metrics {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    max-width: 100%;
+    gap: 10px;
   }
 
   .metricCard {
-    padding: 16px 14px 14px;
+    padding: 14px 12px 12px;
   }
 
   .metricCard strong {
     font-size: 18px;
-    margin-bottom: 4px;
   }
 }
 
 @media (max-width: 640px) {
-  .hero {
-    min-height: calc(60vh - 72px);
-    background-position: 68% center;
+  .heroLayout {
+    min-height: 420px;
   }
 
-  .overlay {
-    padding: 60px 0 60px;
+  .heroContent {
+    max-width: 360px;
+    padding: 40px 0 48px;
   }
 
-  .content h1 {
-    margin-bottom: 18px;
-    font-size: 34px;
-    line-height: 1.08;
+  .heroContent h1 {
+    margin-bottom: 16px;
+    font-size: 32px;
   }
 
   .description {
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     font-size: var(--text);
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   .actions {
     gap: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
   }
 
   .primaryBtn {
     width: 100%;
     min-height: 52px;
+  }
+
+  .heroImageBox {
+    left: -90%;
+    right: calc((100vw - 100%) / -2);
+  }
+
+  .heroImageWrap {
+    width: 60%;
+  }
+
+  .heroImageWrap::before {
+    background: linear-gradient(
+      90deg,
+      #f4f5f6 0%,
+      rgba(244, 245, 246, 0.95) 18%,
+      rgba(244, 245, 246, 0.72) 38%,
+      rgba(244, 245, 246, 0.28) 60%,
+      rgba(244, 245, 246, 0) 82%
+    );
+  }
+
+  .heroImage {
+    object-position: 24% center;
+    transform: none;
   }
 
   .metrics {
@@ -195,11 +270,22 @@
   }
 }
 
-@media (max-width: 430px) {
-  .content h1 {
+@media (max-width: 420px) {
+  .heroContent h1 {
     max-width: 320px;
     font-size: 26px;
-    line-height: 1.08;
-    letter-spacing: 0;
+  }
+
+  .heroImageWrap::before {
+    background: linear-gradient(
+      90deg,
+      #f4f5f6 0%,
+      rgba(244, 245, 246, 0.99) 10%,
+      rgba(244, 245, 246, 0.95) 30%,
+      rgba(244, 245, 246, 0.84) 50%,
+      rgba(244, 245, 246, 0.6) 60%,
+      rgba(244, 245, 246, 0.28) 80%,
+      rgba(244, 245, 246, 0) 90%
+    );
   }
 }
